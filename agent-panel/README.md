@@ -81,12 +81,13 @@ This project was built with assistance from AI tools for ideation and code guida
 
 ## Project Structure
 
-```
+```text
+mock/         # Event fixtures for success/error scenarios
 src/
-  components/
-  mock/
-  state/
-  App.jsx
+  components/ # UI components (AgentRunPanel, TaskItem, etc.)
+  hooks/      # State management and event orchestration logic
+  App.jsx     # Main application entry
+DECISIONS.md  # Detailed architectural reasoning
 ```
 
 ---
