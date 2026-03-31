@@ -31,3 +31,4 @@ DECISION 5: TASK DEPENDENCY DISPLAY
 Tasks that are waiting on others stay in a ready state until their prerequisites are done. I chose not to draw a complex graph to keep the view focused on the active work. The execution order naturally handles the dependencies, and the synthesis only begins once the required data is ready.
 
 I would reconsider this if the workflows became non-linear or had complex bottlenecks. If that happened, I would add a feature where hovering over a waiting task highlights exactly which upstream tasks it is waiting on.
+
