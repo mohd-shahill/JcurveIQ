@@ -1,0 +1,47 @@
+[
+  {
+    "type": "run_started",
+    "run_id": "r_002",
+    "query": "Analyse Tesla capital expenditure and margins (2020-2024)",
+    "timestamp": 1700000000000
+  },
+  {
+    "type": "agent_thought",
+    "task_id": "coordinator",
+    "thought": "Initiating data collection for Tesla 10-K and 10-Q filings.",
+    "timestamp": 1700000001000
+  },
+  {
+    "type": "task_spawned",
+    "task_id": "t_001",
+    "label": "Fetch Tesla 10-K filings",
+    "agent": "filing_fetcher",
+    "spawned_by": "coordinator",
+    "parallel_group": null,
+    "depends_on": [],
+    "timestamp": 1700000002000
+  },
+  {
+    "type": "tool_call",
+    "task_id": "t_001",
+    "tool": "sec_edgar_search",
+    "input_summary": "ticker=TSLA, form=10-K, years=2020-2024",
+    "timestamp": 1700000003000
+  },
+  {
+    "type": "task_spawned",
+    "task_id": "t_002",
+    "label": "Historical margin analysis",
+    "agent": "financial_analyst",
+    "spawned_by": "coordinator",
+    "parallel_group": null,
+    "depends_on": ["t_001"],
+    "timestamp": 1700000004000
+  },
+  {
+    "type": "run_error",
+    "run_id": "r_002",
+    "message": "Coordinator encountered an unrecoverable error: SEC EDGAR API returned 500 Internal Server Error. Partial results may be available.",
+    "timestamp": 1700000012000
+  }
+]
